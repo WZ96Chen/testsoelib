@@ -1,0 +1,42 @@
+{
+  "MongoConfig": {
+    "Host": "192.168.1.206",
+    "DbName":"crmDB",
+    "UserName": "admin",
+    "Password": "i20dLEwETos=",
+    "Port": 27017
+  },
+  "RedisConfig": {
+    "Host": "192.168.1.206:6379",
+    "Password": "UKmSJysP4Rk=",
+    "MaxIdle" : 30,
+    "MaxActive" : 30,
+    "IdleTimeout" : 200
+  },
+  "MQTT": {
+    "Client": {
+      "Server": "47.99.33.224",
+      "Port"  : "1883",
+      "Websocket": "18080"
+    },
+    "Server": {
+      "Port": "1883",
+      "WsAddr": "18080",
+      "WssAddr": "18081"
+    }
+  },
+  "TCP": {
+    "Host": "127.0.0.1",
+    "Port": "5201"
+  },
+  "ATT": {
+    "Delay":5,
+    "ErrorDelay": 10,
+    "TimeZone": 8,
+    "Realtime": 1
+  },
+  "Caller": {
+    "LineCount": 1,
+    "Enable": false
+  }
+}
