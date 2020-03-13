@@ -1,10 +1,10 @@
 package app
 
 import (
-	"github.com/WZ96Chen/testsoelib/net/e"
 	"github.com/getsentry/raven-go"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"testsoelib/net/e"
 )
 
 //Gin gin
