@@ -1,7 +1,7 @@
 package lucslot
 
 import (
-	"testsoelib/tools/ants"
+	"github.com/WZ96Chen/testsoelib/tools/ants"
 	"time"
 )
 
