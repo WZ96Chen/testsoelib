@@ -3,11 +3,11 @@ package tenantdb
 import (
 	"errors"
 	"fmt"
-	"github.com/WZ96Chen/testsoelib/common/des"
-	"github.com/WZ96Chen/testsoelib/common/utils"
 	"github.com/jinzhu/gorm"
 	"log"
 	"sync"
+	"testsoelib/common/des"
+	"testsoelib/common/utils"
 	"time"
 )
 

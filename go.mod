@@ -1,4 +1,4 @@
-module github.com/WZ96Chen/testsoelib
+module testsoelib
 
 go 1.14
 

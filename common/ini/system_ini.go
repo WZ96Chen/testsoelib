@@ -5,11 +5,11 @@ package ini
 */
 
 import (
-	"github.com/WZ96Chen/testsoelib/common/des"
 	"github.com/go-ini/ini"
 	"log"
 	"strconv"
 	"strings"
+	"testsoelib/common/des"
 )
 
 type Database struct {
