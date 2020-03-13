@@ -8,12 +8,12 @@ package config
 
 import (
 	"encoding/json"
+	"github.com/WZ96Chen/testsoelib/common/db/specialdb"
+	"github.com/WZ96Chen/testsoelib/common/des"
+	"github.com/WZ96Chen/testsoelib/common/soelog"
+	"github.com/WZ96Chen/testsoelib/net/emqtt"
+	"github.com/WZ96Chen/testsoelib/net/soetcp"
 	"os"
-	"testsoelib/common/db/specialdb"
-	"testsoelib/common/des"
-	"testsoelib/common/soelog"
-	"testsoelib/net/emqtt"
-	"testsoelib/net/soetcp"
 )
 
 type JsonConfig struct {

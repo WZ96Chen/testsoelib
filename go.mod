@@ -1,4 +1,4 @@
-module testsoelib
+module github.com/WZ96Chen/testsoelib
 
 go 1.14
 
@@ -30,4 +30,5 @@ require (
 	golang.org/x/text v0.3.2
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
+
 replace github.com/jinzhu/gorm => github.com/jinzhu/gorm v1.9.11

@@ -6,8 +6,8 @@ package lucslot
 */
 import (
 	"errors"
+	"github.com/WZ96Chen/testsoelib/tools/ants"
 	"sync"
-	"testsoelib/tools/ants"
 	"time"
 )
 
