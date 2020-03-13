@@ -1,6 +1,6 @@
-module github.com/soesoftcn/soelib
+module testsoelib
 
-go 1.13
+go 1.14
 
 require (
 	github.com/HuKeping/rbtree v0.0.0-20200208030951-29f0b79e84ed // indirect
@@ -15,7 +15,6 @@ require (
 	github.com/getsentry/raven-go v0.2.0
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-ini/ini v1.54.0
-	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/uuid v1.1.1
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
@@ -31,3 +30,4 @@ require (
 	golang.org/x/text v0.3.2
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
+replace github.com/jinzhu/gorm => github.com/jinzhu/gorm v1.9.11

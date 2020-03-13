@@ -3,8 +3,8 @@ package app
 import (
 	"github.com/getsentry/raven-go"
 	"github.com/gin-gonic/gin"
-	"github.com/soesoftcn/soelib/net/e"
 	"net/http"
+	"testsoelib/net/e"
 )
 
 //Gin gin

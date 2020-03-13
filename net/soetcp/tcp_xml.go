@@ -9,8 +9,8 @@ import (
 	"encoding/xml"
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/soesoftcn/soelib/common/utils"
 	"strings"
+	"testsoelib/common/utils"
 )
 
 const (
@@ -106,7 +106,7 @@ type SoeServiceData struct {
 }
 
 func (s *SoeServiceData) toXML() (xmlContent string, err error) {
-	uid:= uuid.New().String()
+	uid := uuid.New().String()
 	s.GuID = "{" + strings.ToUpper(uid) + "}"
 	s.Content = base64.StdEncoding.EncodeToString([]byte(s.Content))
 	data, _ := xml.MarshalIndent(s, "", " ")
@@ -143,7 +143,7 @@ func GenerateDirectiveContentJSON(content DirectiveContent) string {
 //GenerateSRTWaringJSON 生成智钟宝语音播报
 func GenerateSRTWaringJSON(content SRTContent) string {
 	contentStr := GenerateSRTContentJSON(content)
-	uid:= uuid.New().String()
+	uid := uuid.New().String()
 	soeServiceData := SoeServiceData{Command: CommandSmartRemindData, Content: contentStr, Source: 1,
 		GuID: "{" + strings.ToUpper(uid) + "}", PlaySyc: 0, PlayType: 0, IsNewInterface: 0}
 	contentData, _ := json.Marshal(soeServiceData)
@@ -152,7 +152,7 @@ func GenerateSRTWaringJSON(content SRTContent) string {
 
 //GenerateVoiceJSON 生成语音播报XML
 func GenerateVoiceJSON(content DirectiveContent) (xmlContent string, err error) {
-	uid:= uuid.New().String()
+	uid := uuid.New().String()
 	soeServiceData := SoeServiceData{Command: content.Command, Content: content.Value, Source: 0,
 		GuID: "{" + strings.ToUpper(uid) + "}", PlaySyc: content.PlaySyc, Computer: content.Computer,
 		SoundDevice: content.SoundDevice, PlayType: content.PlayType, IsNewInterface: 1}
@@ -163,7 +163,7 @@ func GenerateVoiceJSON(content DirectiveContent) (xmlContent string, err error) 
 //GenerateLotusVoiceJSON 生成Lotus调用呼叫
 func GenerateLotusVoiceJSON(content SRTContent, serviceCommand int) string {
 	contentStr := GenerateSRTContentJSON(content)
-	uid:= uuid.New().String()
+	uid := uuid.New().String()
 	soeServiceData := SoeServiceData{Command: serviceCommand, Content: contentStr, Source: 5,
 		GuID: "{" + strings.ToUpper(uid) + "}", PlaySyc: 0,
 		PlayType: 0, IsNewInterface: 0}
@@ -182,7 +182,7 @@ func GenerateSRTContentXML(command interface{}) string {
 func GenerateSRTWaringXML(command SRTContent) string {
 	contentStr := GenerateSRTContentXML(command)
 	contentBase64 := base64.StdEncoding.EncodeToString([]byte(contentStr))
-	uid:= uuid.New()
+	uid := uuid.New()
 	ssd := SoeServiceData{Command: CommandSmartRemindData, Content: string(contentBase64), Source: 1,
 		GuID: "{" + strings.ToUpper(uid.String()) + "}", PlaySyc: 1, PlayType: 0, IsNewInterface: 1}
 	data, _ := xml.MarshalIndent(&ssd, "", " ")
@@ -192,7 +192,7 @@ func GenerateSRTWaringXML(command SRTContent) string {
 //GenerateVoiceXML 生成语音播报XML
 func GenerateVoiceXML(param DirectiveContent) (xmlContent string, err error) {
 	contentBase64 := base64.StdEncoding.EncodeToString([]byte(param.Value))
-	uid:= uuid.New()
+	uid := uuid.New()
 	ssd := SoeServiceData{Command: param.Command, Content: string(contentBase64), Source: 0,
 		GuID: "{" + strings.ToUpper(uid.String()) + "}", PlaySyc: 1, Computer: param.Computer,
 		SoundDevice: param.SoundDevice, PlayType: param.PlayType, IsNewInterface: 1}
@@ -204,7 +204,7 @@ func GenerateVoiceXML(param DirectiveContent) (xmlContent string, err error) {
 func GenerateLotusVoiceXML(command SRTContent, serviceCommand int) string {
 	contentStr := GenerateSRTContentXML(command)
 	contentBase64 := base64.StdEncoding.EncodeToString([]byte(contentStr))
-	uid:= uuid.New()
+	uid := uuid.New()
 	ssd := SoeServiceData{Command: serviceCommand, Content: string(contentBase64), Source: 5,
 		GuID: "{" + strings.ToUpper(uid.String()) + "}", PlaySyc: 0,
 		PlayType: 0, IsNewInterface: 0}

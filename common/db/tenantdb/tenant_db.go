@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/soesoftcn/soelib/common/des"
-	"github.com/soesoftcn/soelib/common/utils"
 	"log"
 	"sync"
+	"testsoelib/common/des"
+	"testsoelib/common/utils"
 	"time"
 )
 

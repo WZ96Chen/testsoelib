@@ -6,10 +6,10 @@ package ini
 
 import (
 	"github.com/go-ini/ini"
-	"github.com/soesoftcn/soelib/common/des"
 	"log"
 	"strconv"
 	"strings"
+	"testsoelib/common/des"
 )
 
 type Database struct {

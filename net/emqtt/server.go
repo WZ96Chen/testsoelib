@@ -7,13 +7,13 @@ package emqtt
 import (
 	"flag"
 	"fmt"
-	"github.com/soesoftcn/soelib/common/soelog"
 	"github.com/surgemq/message"
 	"github.com/surgemq/surgemq/service"
 	"log"
 	"os"
 	"os/signal"
 	"runtime/pprof"
+	"testsoelib/common/soelog"
 )
 
 //EmqttServer 服务端
@@ -80,7 +80,7 @@ func StartServer(config ServerConfig) {
 	signal.Notify(sigchan, os.Interrupt, os.Kill)
 	go func() {
 		sig := <-sigchan
-		soelog.Logger.Error("Existing due to trapped signal;"+ sig.String())
+		soelog.Logger.Error("Existing due to trapped signal;" + sig.String())
 
 		if f != nil {
 			soelog.Logger.Error("Stopping profile")

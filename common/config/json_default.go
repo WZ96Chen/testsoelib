@@ -8,12 +8,12 @@ package config
 
 import (
 	"encoding/json"
-	"github.com/soesoftcn/soelib/common/soelog"
-	"github.com/soesoftcn/soelib/common/db/specialdb"
-	"github.com/soesoftcn/soelib/common/des"
-	"github.com/soesoftcn/soelib/net/emqtt"
-	"github.com/soesoftcn/soelib/net/soetcp"
 	"os"
+	"testsoelib/common/db/specialdb"
+	"testsoelib/common/des"
+	"testsoelib/common/soelog"
+	"testsoelib/net/emqtt"
+	"testsoelib/net/soetcp"
 )
 
 type JsonConfig struct {
@@ -52,13 +52,13 @@ var Config JsonConfig
 func LoadConfig(configFile string) {
 	file, err := os.Open(configFile)
 	if err != nil {
-		soelog.Logger.Fatal("读取config配置文件,发生错误:"+err.Error())
+		soelog.Logger.Fatal("读取config配置文件,发生错误:" + err.Error())
 	}
 	decoder := json.NewDecoder(file)
 	Config = JsonConfig{}
 	err = decoder.Decode(&Config)
 	if err != nil {
-		soelog.Logger.Fatal("config配置文件转换错误,请检查文件格式是否正确 错误信息:"+err.Error())
+		soelog.Logger.Fatal("config配置文件转换错误,请检查文件格式是否正确 错误信息:" + err.Error())
 	}
 	Config.Check()
 }

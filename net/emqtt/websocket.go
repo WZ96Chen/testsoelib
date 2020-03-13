@@ -1,12 +1,12 @@
 package emqtt
 
 import (
-	"github.com/soesoftcn/soelib/common/soelog"
+	"golang.org/x/net/websocket"
 	"io"
 	"net"
 	"net/http"
 	"net/url"
-	"golang.org/x/net/websocket"
+	"testsoelib/common/soelog"
 )
 
 //DefaultListenAndServeWebsocket DefaultListenAndServeWebsocket
@@ -22,7 +22,7 @@ func AddWebsocketHandler(urlPattern string, uri string) error {
 
 	u, err := url.Parse(uri)
 	if err != nil {
-		soelog.Logger.Error("surgemq/main: "+ err.Error())
+		soelog.Logger.Error("surgemq/main: " + err.Error())
 		return err
 	}
 

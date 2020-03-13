@@ -2,11 +2,11 @@ package lucslot
 
 import (
 	"fmt"
-	"github.com/soesoftcn/soelib/tools/ants"
 	"math/rand"
 	"strconv"
 	"sync"
 	"testing"
+	"testsoelib/tools/ants"
 	"time"
 )
 
